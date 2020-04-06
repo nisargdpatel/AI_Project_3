@@ -1,4 +1,6 @@
+import java.sql.Date;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.Random;
 
 public class Q_Learning {
@@ -19,6 +21,9 @@ public class Q_Learning {
     static Cell currCell = new Cell();
 
     public static void main(String[] args) {
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+        Date date;
 
         int trials = 20000;
         Cell[][] Q = new Cell[6][7];
@@ -49,6 +54,10 @@ public class Q_Learning {
         printFinalMap(N);
         System.out.println("********************PRINTING OPTIMAL MAP:*******************");
         printOptimalAction(Q);
+        date = new Date(System.currentTimeMillis());
+        System.out.println("Authors: Maitra Patel (00984222), Nisarg Patel (88392672)");
+        System.out.println("Runtime: " + formatter.format(date) + "\n\n");
+        
 
     }
 
